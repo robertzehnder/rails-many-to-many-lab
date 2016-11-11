@@ -32,3 +32,10 @@ squanchy = Patient.create(name: "Squanchy", age: -12, gender:"squanchy_male")
 ada_lovelace = Patient.create(name: "Ada Lovelace", age: 200, gender:"female")
 
 # Add Appointments here
+
+patients = Patient.all
+doctors = Doctor.all
+
+  patients.each do |patient|
+    Appointment.create!(patient_id: patient.id, doctor_id: doctors.sample.id, appointment_time: Time.at(rand * Time.now.to_i))
+  end

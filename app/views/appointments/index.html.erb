@@ -1,0 +1,16 @@
+<h2>Appointments for: <%= @user.name %></h2>
+
+<% if @type == 'doctor' %>
+<%= link_to "Add New Appointment", new_doctor_appointment_path(@user) %>
+    <% @user.appointments.each do |appt| %>
+      <h4>Patient: <%= appt.patient.name %></h4>
+      <p>Appointment Time: <%= appt.appointment_time  %> </p>
+    <% end %>
+    <% elsif @type == 'patient' %>
+    <% @user.appointments.each do |appt| %>
+      <h4>Doctor: <%= appt.doctor.name %></h4>
+      <p>Appointment Time: <%= appt.appointment_time  %> </p>
+    <% end %>
+<% end  %>
+<%  %>
+<%=  %>
